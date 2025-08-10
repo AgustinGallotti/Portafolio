@@ -1,0 +1,419 @@
+:root {
+    --img1: url("1.jpg");
+    --img2: url("2.jpg");
+    --img3: url("3.png");
+    --img4: url("4.png");
+    --malla: url("cuadricula.jpg");
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navigation {
+    z-index: 1;
+    inset: 1;
+    position: fixed;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: -15px;
+    padding: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    gap: 40px;
+    border: solid 2px white;
+    background-color: transparent;
+}
+
+.navigation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* soporte Safari */
+    background-color: rgba(0, 0, 0, 0.3); /* fondo semitransparente */
+}
+
+a {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+a:hover {
+    color: white;
+    opacity: 80%;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: nowrap;
+    color: white;
+    margin-top: 40px;
+}
+
+.interactividad{
+    display: flex;
+    flex-direction: row;
+}
+
+.interactividad p {
+    margin-left: 0.8ch;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 6ch;
+}
+
+.escrito-animacion {
+    display: flex;
+    font-family: 'Ubuntu', sans-serif;
+    white-space: nowrap;
+    font-size: 6ch;
+    animation:
+    escrito 3s steps(9) infinite alternate;
+}
+
+
+@keyframes escrito {
+    0% {width: 0ch; overflow: hidden;}
+    20% {width: 5ch; overflow: hidden;}
+    40% {width: 10ch; overflow: hidden;}
+    60% {width: 16ch; overflow: hidden;}
+    80% {width: 16ch; overflow: hidden;}
+    100% {width: 16ch; overflow: hidden;}
+}
+
+
+@keyframes blinkingCursor{
+  from { border-right-color: rebeccapurple; }
+  to { border-right-color: transparent; }
+}
+
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 2ch;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.7ch;
+}
+
+
+.redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: auto;
+    width: 40ch;
+    height: 10ch;
+}
+
+.redes img[alt=r] {
+    display: flex;
+    margin-top: 3ch;
+    width: auto;
+    height: 4ch;
+}
+
+.redes img[alt=r]:hover {
+    filter: brightness(75%);
+}
+
+.contacto {
+    flex-direction: row;
+    display: block;
+    margin-bottom: auto;
+    margin-left: auto;
+    overflow: hidden;
+    padding: 2%;
+}
+
+.informacionPersonal {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: right;
+    margin-top: auto;
+}
+
+.informacionPersonal h3 {
+    margin-top: -2px;
+    color: rgba(255, 255, 255, 0.192);
+}
+
+.contacto h3 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 3px;
+    margin-left: 20px;
+}
+
+.contacto h2 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 3px;
+    margin-left: 20px;
+}
+
+.foto img{
+    border: solid 2px white;
+    height: 350px;
+    box-shadow: 4px 4px 2px violet;
+
+}
+
+.proyectos {
+    height: 70ch;
+    display: flex;
+    padding: 5%;
+    max-width: 320ch;
+    margin: 20px;
+    overflow-x: auto;
+    background-color: black;
+}
+
+.proyectos::-webkit-scrollbar {
+    display: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+.HProyectos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: -5px;
+    color: white;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    min-width: 300px;
+    margin: auto;
+    margin-right: 7%;
+    padding: 3%;
+    background-color: black;
+    color: black;
+    border-radius: 2ch;
+    /*box-shadow: offset-x offset-y blur spread color;*/
+    box-shadow: 0px 0px 0px white;
+    border: solid 0.01px;
+    border-color: white;
+    transition: box-shadow 0.8s ease;
+}
+
+.tarjetas:hover, img[alt="fotoPersonal"]:hover {
+    box-shadow: 7px 7px 2px violet;
+    /*transition: propiedad duración easing delay;*/
+    background-color: white;
+    color: black;
+    transition: background-color 0.4s ease, transform 0.1s ease-in;
+    transition: color 3s ease, transform 3s ease, border-color black;
+    transform: translate(-4px, -2px);
+    button {background-color: violet};
+}
+
+img[alt="fotoPersonal"] {
+    background-color: black;
+    margin-top: auto;
+}
+
+.btn button{
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.8ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+    background-color:black;
+    border-radius: 4%;
+    border: 0;
+    width: 11ch;
+    height: 5ch;
+    box-shadow: none;
+}
+
+.btn button:hover {
+    box-shadow: 4px 4px 1px black;
+    color: white;
+    transition: box-shadow 0.4s ease, background-color 0.4s ease;
+    background-color: black;
+
+}
+
+.tarjetas h3 {
+    margin-top: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1px;
+}
+
+.tarjetas p {
+    font-family: 'Roboto' ,sans-serif;
+    letter-spacing: 1px;
+}
+
+.muestras {
+    margin-top: 70px;
+    display: flex;
+    flex-direction:column;
+    position: relative;
+}
+
+.muestras h3 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+    letter-spacing: 1.2px;
+    text-align: center;
+    padding: 2%;
+    color: aliceblue;
+}
+
+.grid {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    grid-auto-rows: minmax(200px,400px);
+}
+
+.one, .two, .three, .four, .five{
+    background-image: var(--img1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 400px;
+}
+
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover{
+    background-image: var(--img2);
+    transition: background-image 0.8s ease, transform 0.1s ease-in;
+}
+
+.muestras nav {
+    display: flex;
+    margin: 20px;
+}
+
+.muestras button {
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1px;
+    font-size: 2ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    margin: auto;
+    padding: 1%;
+    background-color:black;
+    border-radius: 4%;
+    border: 0;
+    width: 15ch;
+    height: 1ch;
+    transition: transform 1s ease-in-out, box-shadow 1s ease-in-out, background-color 1s, color 1s;
+}
+
+.muestras button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 1px greenyellow;
+    transform: translate(-4px, -2px);
+}
+
+
+.one {
+    grid-column: 1/3;
+    grid-row: 1;
+}
+
+.two {
+    grid-column: 3/3;
+    grid: 1;
+}
+
+.three {
+    grid-column: 1/4;
+    grid: 2;
+}
+
+.five {
+    grid-column: 2/4;
+    grid: 3;
+}
+
+footer {
+    display: flex;
+    z-index: 0;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 2%;
+    border: solid 2px white;
+    box-shadow: 7px 7px 1px violet;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--malla);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 40%;
+    z-index: -1;
+    animation: op 2s steps(20) infinite alternate;
+}
+
+@keyframes op {
+    0% {opacity: 40%;}
+    100% {opacity: 100%;}
+}
+
+
+footer .copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.5ch;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2ch;
+}
